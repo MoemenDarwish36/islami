@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class ItemContent extends StatelessWidget {
+class ItemSuraDetails extends StatelessWidget {
   String content;
 
   int index;
 
-  ItemContent({super.key, required this.content, required this.index});
+  ItemSuraDetails({super.key, required this.content, required this.index});
 
   @override
   Widget build(BuildContext context) {

@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:islami/model/sura_model/sura_details_args.dart';
 import 'package:islami/ui/screens/sura_details_screen/sura_details_screen.dart';
 
-class ItemApp extends StatelessWidget {
+class ItemSuraName extends StatelessWidget {
   String name;
   int index;
 
-  ItemApp({super.key, required this.name, required this.index});
+  ItemSuraName({super.key, required this.name, required this.index});
 
   @override
   Widget build(BuildContext context) {

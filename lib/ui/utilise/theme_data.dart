@@ -33,6 +33,16 @@ class MyThemeData {
           fontSize: 20,
           fontWeight: FontWeight.w400,
         ),
+        titleMedium: TextStyle(
+          color: AppColors.accentLight,
+          fontSize: 25,
+          fontWeight: FontWeight.w600,
+        ),
+        titleSmall: TextStyle(
+          color: AppColors.accentLight,
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           selectedItemColor: AppColors.accentLight));

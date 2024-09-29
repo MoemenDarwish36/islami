@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/model/sura_model/sura_details_args.dart';
-import 'package:islami/ui/widget/item_content.dart';
+import 'package:islami/ui/widget/item_sura_details.dart';
 
 import '../../utilise/app_assets.dart';
 import '../../utilise/app_colors.dart';
@@ -51,7 +51,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                       return buildDivider();
                     },
                     itemBuilder: (context, index) {
-                      return ItemContent(
+                      return ItemSuraDetails(
                         content: verses[index],
                         index: index,
                       );
@@ -80,9 +80,7 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
     ///This function (where) to delete empty lines
     ///This function (trim) to delete any space in lines
     lines = lines.where((line) => line.trim().isNotEmpty).toList();
-    // for (int i = 0; i < lines.length; i++) {
-    //
-    // }
+
     verses = lines;
     setState(() {});
   }

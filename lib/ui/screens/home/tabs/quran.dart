@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami/ui/widget/item_app.dart';
+import 'package:islami/ui/widget/item_Sura_name.dart';
 
 import '../../../utilise/app_assets.dart';
 import '../../../utilise/app_colors.dart';
@@ -12,7 +12,6 @@ class QuranTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // buildHeaderImage(),
         Image.asset(AppAssets.quranTabLogo),
         buildDivider(),
         Text(
@@ -29,7 +28,7 @@ class QuranTab extends StatelessWidget {
     return Expanded(
       child: ListView.separated(
         itemBuilder: (context, index) {
-          return ItemApp(
+          return ItemSuraName(
             name: Constants.suraNames[index],
             index: index,
           );
