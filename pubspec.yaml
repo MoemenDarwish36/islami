@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_native_splash: ^2.4.1
   google_fonts: ^6.2.1
+  http: ^1.2.2
+  audioplayers: ^6.1.0
 
 dev_dependencies:
   flutter_test:
