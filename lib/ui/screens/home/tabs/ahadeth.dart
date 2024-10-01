@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/model/hadeth_model/hadeth_model.dart';
+import 'package:islami/ui/utilise/extension.dart';
 import 'package:islami/ui/widget/item_ahadeth_name.dart';
 
 import '../../../utilise/app_assets.dart';
@@ -26,7 +27,7 @@ class _AhadethTabState extends State<AhadethTab> {
         Image.asset(AppAssets.ahdethTabLogo),
         buildDivider(),
         Text(
-          "Hadeth Name",
+          context.localization.ahadethName,
           style: Theme.of(context).textTheme.bodyMedium,
         ),
         buildDivider(),

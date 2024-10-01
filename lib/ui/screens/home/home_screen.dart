@@ -5,6 +5,7 @@ import 'package:islami/ui/screens/home/tabs/radio.dart';
 import 'package:islami/ui/screens/home/tabs/sebha.dart';
 import 'package:islami/ui/screens/home/tabs/settings.dart';
 import 'package:islami/ui/utilise/app_assets.dart';
+import 'package:islami/ui/utilise/extension.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "homeScreen";
@@ -22,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
     AhadethTab(),
     RadioTab(),
     const SebhaTab(),
-    const SettingsTab()
+    SettingsTab()
   ];
 
   @override
@@ -33,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            "Islami",
+            context.localization.islami,
             style: Theme.of(context).textTheme.bodyLarge,
           ),
         ),
@@ -53,18 +54,22 @@ class _HomeScreenState extends State<HomeScreen> {
             selectedTabIndex = index;
             setState(() {});
           },
-          items: const [
+          items: [
             BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage(AppAssets.icQuran)), label: "Quran"),
+                icon: const ImageIcon(AssetImage(AppAssets.icQuran)),
+                label: context.localization.quran),
             BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage(AppAssets.icAhdeth)),
-                label: "Ahadeth"),
+                icon: const ImageIcon(AssetImage(AppAssets.icAhdeth)),
+                label: context.localization.ahadeth),
             BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage(AppAssets.icRadio)), label: "Radio"),
+                icon: const ImageIcon(AssetImage(AppAssets.icRadio)),
+                label: context.localization.radio),
             BottomNavigationBarItem(
-                icon: ImageIcon(AssetImage(AppAssets.icSebha)), label: "Sebha"),
+                icon: const ImageIcon(AssetImage(AppAssets.icSebha)),
+                label: context.localization.sebha),
             BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: "Settings"),
+                icon: const Icon(Icons.settings),
+                label: context.localization.settings),
           ]),
     );
   }

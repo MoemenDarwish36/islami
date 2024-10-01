@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami/ui/utilise/extension.dart';
 import 'package:islami/ui/widget/item_Sura_name.dart';
 
 import '../../../utilise/app_assets.dart';
@@ -15,7 +16,7 @@ class QuranTab extends StatelessWidget {
         Image.asset(AppAssets.quranTabLogo),
         buildDivider(),
         Text(
-          "Sura Name",
+          context.localization.suraName,
           style: Theme.of(context).textTheme.bodyMedium,
         ),
         buildDivider(),
