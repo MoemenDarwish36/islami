@@ -2,15 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:islami/ui/provider/language_provider.dart';
+import 'package:islami/ui/provider/theme_provider.dart';
 import 'package:islami/ui/screens/ahadeth_details_screen/ahadeth_details_screen.dart';
 import 'package:islami/ui/screens/home/home_screen.dart';
 import 'package:islami/ui/screens/sura_details_screen/sura_details_screen.dart';
 import 'package:islami/ui/utilise/theme_data.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  ThemeProvider themeProvider = ThemeProvider();
+  LanguageProvider languageProvider = LanguageProvider();
+  await themeProvider.getTheme();
+  await languageProvider.getLanguage();
   runApp(ChangeNotifierProvider(
-      create: (_) => LanguageProvider(), child: const MyApp()));
+    create: (_) => themeProvider,
+    child: ChangeNotifierProvider(
+        create: (_) => languageProvider, child: const MyApp()),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -21,6 +30,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     ///to get object from Provider which i create
     LanguageProvider languageProvider = Provider.of(context);
+    ThemeProvider themeProvider = Provider.of(context);
     return MaterialApp(
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -45,6 +55,8 @@ class MyApp extends StatelessWidget {
         AhadethDetailsScreen.routeName: (_) => const AhadethDetailsScreen(),
       },
       theme: MyThemeData.lightMode,
+      darkTheme: MyThemeData.darkMode,
+      themeMode: themeProvider.currentTheme,
     );
   }
 }

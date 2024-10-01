@@ -3,7 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:islami/model/hadeth_model/hadeth_model.dart';
 import 'package:islami/ui/utilise/extension.dart';
 import 'package:islami/ui/widget/item_ahadeth_name.dart';
+import 'package:provider/provider.dart';
 
+import '../../../provider/theme_provider.dart';
 import '../../../utilise/app_assets.dart';
 import '../../../utilise/app_colors.dart';
 
@@ -15,10 +17,12 @@ class AhadethTab extends StatefulWidget {
 }
 
 class _AhadethTabState extends State<AhadethTab> {
+  late ThemeProvider themeProvider;
   List<Hadeth> ahadethList = [];
 
   @override
   Widget build(BuildContext context) {
+    themeProvider = Provider.of(context);
     if (ahadethList.isEmpty) {
       loadHadethFile();
     }
@@ -57,8 +61,10 @@ class _AhadethTabState extends State<AhadethTab> {
         color: AppColors.primaryLight,
       ));
 
-  Divider buildDivider() => const Divider(
-        color: AppColors.primaryLight,
+  Divider buildDivider() => Divider(
+        color: themeProvider.isDarkThemeEnabled
+            ? AppColors.accentDark
+            : AppColors.primaryLight,
         thickness: 3,
       );
 

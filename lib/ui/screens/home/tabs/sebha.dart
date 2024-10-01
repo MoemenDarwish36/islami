@@ -71,7 +71,8 @@ class _SebhaTabState extends State<SebhaTab> {
                 ),
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Theme.of(context).primaryColor),
+                        backgroundColor:
+                            Theme.of(context).primaryColor.withOpacity(.7)),
                     onPressed: () {
                       setState(() {
                         count++;

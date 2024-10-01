@@ -3,6 +3,7 @@ import 'package:islami/ui/utilise/extension.dart';
 import 'package:provider/provider.dart';
 
 import '../../../provider/language_provider.dart';
+import '../../../provider/theme_provider.dart';
 
 class SettingsTab extends StatefulWidget {
   SettingsTab({super.key});
@@ -13,12 +14,14 @@ class SettingsTab extends StatefulWidget {
 
 class _SettingsTabState extends State<SettingsTab> {
   late LanguageProvider languageProvider;
+  late ThemeProvider themeProvider;
 
   bool isDarkThemeEnabled = false;
 
   @override
   Widget build(BuildContext context) {
     languageProvider = Provider.of(context);
+    themeProvider = Provider.of(context);
     return Container(
       margin: const EdgeInsets.all(15),
       child: Column(
@@ -83,16 +86,13 @@ class _SettingsTabState extends State<SettingsTab> {
 
   buildThemeSwitch() => Switch(
 
-      /// to design color
-      activeColor: Theme.of(context).primaryColor,
-
       ///this (value) is bool
       /// this should to be a variable
-      value: isDarkThemeEnabled,
+      value: themeProvider.isDarkThemeEnabled,
 
       ///this (onChanged) is bool
       onChanged: (newValue) {
-        isDarkThemeEnabled = newValue;
+        themeProvider.newTheme = newValue ? ThemeMode.dark : ThemeMode.light;
         setState(() {});
       });
 }

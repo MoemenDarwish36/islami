@@ -6,6 +6,9 @@ import 'package:islami/ui/screens/home/tabs/sebha.dart';
 import 'package:islami/ui/screens/home/tabs/settings.dart';
 import 'package:islami/ui/utilise/app_assets.dart';
 import 'package:islami/ui/utilise/extension.dart';
+import 'package:provider/provider.dart';
+
+import '../../provider/theme_provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "homeScreen";
@@ -17,9 +20,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late ThemeProvider themeProvider;
   int selectedTabIndex = 0;
   List<Widget> tabs = [
-    const QuranTab(),
+    QuranTab(),
     AhadethTab(),
     RadioTab(),
     const SebhaTab(),
@@ -28,9 +32,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    themeProvider = Provider.of(context);
     return Container(
-      decoration: const BoxDecoration(
-          image: DecorationImage(image: AssetImage(AppAssets.lightBackGround))),
+      decoration: BoxDecoration(
+          image:
+              DecorationImage(image: AssetImage(themeProvider.mainBackGround))),
       child: Scaffold(
         appBar: AppBar(
           title: Text(
