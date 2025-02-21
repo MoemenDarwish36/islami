@@ -6,7 +6,7 @@ import '../../../provider/language_provider.dart';
 import '../../../provider/theme_provider.dart';
 
 class SettingsTab extends StatefulWidget {
-  SettingsTab({super.key});
+  const SettingsTab({super.key});
 
   @override
   State<SettingsTab> createState() => _SettingsTabState();
@@ -54,8 +54,6 @@ class _SettingsTabState extends State<SettingsTab> {
   buildLanguageMenu() => DropdownButton(
       dropdownColor: Theme.of(context).primaryColor,
 
-      /// to selected a default value i need to display
-      /// this should to be a variable
       value: languageProvider.selectedLanguage,
       items: [
         DropdownMenuItem<String>(
@@ -69,8 +67,6 @@ class _SettingsTabState extends State<SettingsTab> {
             child: Text(context.localization.english,
                 style: Theme.of(context).textTheme.bodySmall)),
       ],
-
-      /// this (isExpanded) to make arrow expanded
       isExpanded: true,
 
       ///this function(onChange) return dataType which i selected
@@ -86,11 +82,8 @@ class _SettingsTabState extends State<SettingsTab> {
 
   buildThemeSwitch() => Switch(
 
-      ///this (value) is bool
-      /// this should to be a variable
       value: themeProvider.isDarkThemeEnabled,
 
-      ///this (onChanged) is bool
       onChanged: (newValue) {
         themeProvider.newTheme = newValue ? ThemeMode.dark : ThemeMode.light;
         setState(() {});

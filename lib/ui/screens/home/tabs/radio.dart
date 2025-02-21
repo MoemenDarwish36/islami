@@ -24,10 +24,8 @@ class RadioTab extends StatelessWidget {
                 Expanded(child: Image.asset(AppAssets.bodyOfRadio)),
                 Expanded(
                     child: ListView.builder(
-                  /// to swears screens lonely
                   physics: const PageScrollPhysics(),
 
-                  /// to display widget horizontal
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) => SizedBox(
                       width: MediaQuery.of(context).size.width,

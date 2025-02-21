@@ -26,7 +26,6 @@ class _SebhaTabState extends State<SebhaTab> {
           child: Stack(
             alignment: Alignment.topCenter,
 
-            ///to edit by manual
             clipBehavior: Clip.none,
             children: [
               Padding(
