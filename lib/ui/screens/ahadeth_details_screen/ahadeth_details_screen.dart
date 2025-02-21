@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:islami/model/hadeth_model/hadeth_model.dart';
 import 'package:islami/ui/widget/item_ahadeth_details.dart';
 import 'package:provider/provider.dart';
-
 import '../../provider/theme_provider.dart';
 import '../../utilise/app_colors.dart';
 

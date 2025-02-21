@@ -25,10 +25,8 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    ///to get object from Provider which i create
     LanguageProvider languageProvider = Provider.of(context);
     ThemeProvider themeProvider = Provider.of(context);
     return MaterialApp(
@@ -39,13 +37,11 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
 
-      ///this language which i support in my app
       supportedLocales: const [
         Locale('en'),
         Locale('ar'),
       ],
 
-      ///the language which i start run
       locale: Locale(languageProvider.selectedLanguage),
       debugShowCheckedModeBanner: false,
       initialRoute: HomeScreen.routeName,

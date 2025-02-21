@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'app_colors.dart';
 
 class MyThemeData {
-  /// light
   static final ThemeData lightMode = ThemeData(
       primaryColor: AppColors.primaryLight,
       scaffoldBackgroundColor: Colors.transparent,

@@ -116,7 +116,5 @@ abstract class Constants {
     "الناس"
   ];
 
-// static List<String> ahadethList =
-// ///this constructor(generate) i give it a length
-// List.generate(50, (index) => "الحديث رقم ${index + 1}");
+
 }

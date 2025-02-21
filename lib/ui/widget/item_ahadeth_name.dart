@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:islami/model/hadeth_model/hadeth_model.dart';
-
 import '../screens/ahadeth_details_screen/ahadeth_details_screen.dart';
 
 class ItemAhadethName extends StatelessWidget {

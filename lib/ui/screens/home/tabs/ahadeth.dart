@@ -4,13 +4,12 @@ import 'package:islami/model/hadeth_model/hadeth_model.dart';
 import 'package:islami/ui/utilise/extension.dart';
 import 'package:islami/ui/widget/item_ahadeth_name.dart';
 import 'package:provider/provider.dart';
-
 import '../../../provider/theme_provider.dart';
 import '../../../utilise/app_assets.dart';
 import '../../../utilise/app_colors.dart';
 
 class AhadethTab extends StatefulWidget {
-  AhadethTab({super.key});
+  const AhadethTab({super.key});
 
   @override
   State<AhadethTab> createState() => _AhadethTabState();

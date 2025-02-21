@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:islami/ui/utilise/extension.dart';
 import 'package:islami/ui/widget/item_Sura_name.dart';
 import 'package:provider/provider.dart';
-
 import '../../../provider/theme_provider.dart';
 import '../../../utilise/app_assets.dart';
 import '../../../utilise/app_colors.dart';

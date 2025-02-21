@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import '../utilise/app_assets.dart';
 import '../utilise/app_colors.dart';
 
@@ -18,7 +17,6 @@ class ThemeProvider extends ChangeNotifier {
     }
   }
 
-  /// to check if switch open or no
   bool get isDarkThemeEnabled => currentTheme == ThemeMode.dark;
 
   set newTheme(ThemeMode themeMode) {

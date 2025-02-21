@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:islami/model/sura_model/sura_details_args.dart';
 import 'package:islami/ui/widget/item_sura_details.dart';
 import 'package:provider/provider.dart';
-
 import '../../provider/theme_provider.dart';
 import '../../utilise/app_colors.dart';
 
@@ -51,7 +50,6 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
                       color: themeProvider.isDarkThemeEnabled
                           ? AppColors.primaryDark
                           : AppColors.white,
-                      // Theme.of(context).primaryColor,
                       borderRadius: BorderRadius.circular(24)),
                   child: ListView.separated(
                     separatorBuilder: (context, index) {
@@ -86,8 +84,6 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
         await rootBundle.loadString('assets/files/quran/${index + 1}.txt');
     List<String> lines = content.split('\n');
 
-    ///This function (where) to delete empty lines
-    ///This function (trim) to delete any space in lines
     lines = lines.where((line) => line.trim().isNotEmpty).toList();
 
     verses = lines;
