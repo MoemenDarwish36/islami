@@ -7,6 +7,7 @@ import 'package:islami/ui/screens/home/tabs/settings.dart';
 import 'package:islami/ui/utilise/app_assets.dart';
 import 'package:islami/ui/utilise/extension.dart';
 import 'package:provider/provider.dart';
+
 import '../../provider/theme_provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -26,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const AhadethTab(),
     RadioTab(),
     const SebhaTab(),
-    SettingsTab()
+    const SettingsTab()
   ];
 
   @override
