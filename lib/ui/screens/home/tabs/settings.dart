@@ -68,12 +68,7 @@ class _SettingsTabState extends State<SettingsTab> {
                 style: Theme.of(context).textTheme.bodySmall)),
       ],
       isExpanded: true,
-
-      ///this function(onChange) return dataType which i selected
-      ///in DropdownMenuItem
       onChanged: (newLanguageCode) {
-        ///this value maybe return null because user can open
-        /// DropdownButton and close this without choice things
         languageProvider.newLanguage =
             newLanguageCode ?? languageProvider.selectedLanguage;
 
